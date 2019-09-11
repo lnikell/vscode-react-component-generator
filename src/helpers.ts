@@ -132,7 +132,7 @@ export class FileHelper {
       .replace(/{componentName}/g, compName)
       .replace(/{quotes}/g, this.getQuotes(globalConfig));
 
-    let filename = `${componentDir}/${componentName}.${styleTemplate.ext}`;
+    let filename = `${componentDir}/${componentName}${styleConfig.suffix}.${styleTemplate.ext}`;
     if (styleConfig.create) {
       return this.createFile(filename, cssContent).map(result => filename);
     } else {
