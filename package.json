@@ -10,8 +10,8 @@
   },
   "homepage": "https://github.com/abdullahceylan/vscode-react-component-generator",
   "galleryBanner": {
-      "color": "#0273D4",
-      "theme": "dark"
+    "color": "#0273D4",
+    "theme": "dark"
   },
   "repository": {
     "type": "git",
@@ -40,10 +40,7 @@
     "typescript"
   ],
   "activationEvents": [
-    "onCommand:extension.genReactContainerComponentFiles",
-    "onCommand:extension.genReactStatelessComponentFiles",
-    "onCommand:extension.genReactReduxContainerComponentFiles",
-    "onCommand:extension.genReactReduxStatelessComponentFiles"
+    "onCommand:extension.genReactStatelessComponentFiles"
   ],
   "main": "./out/src/extension",
   "icon": "assets/images/icon.png",
@@ -82,7 +79,7 @@
         },
         "ACReactComponentGenerator.mainFile.extension": {
           "type": "string",
-          "default": "jsx",
+          "default": "js",
           "description": "The extension of generated component file"
         },
         "ACReactComponentGenerator.styleFile.create": {
@@ -100,13 +97,12 @@
             "sass (.scss)",
             "less (.less)"
           ],
-          "default": "styled-components (.js)",
+          "default": "standard (.css)",
           "description": "The type of stylesheet file to create"
         },
-
         "ACReactComponentGenerator.styleFile.suffix": {
           "type": "string",
-          "default": ".styles",
+          "default": "",
           "description": "The suffix to add to the end of the stylesheet filename. Default: ComponentName.styles.(extension)"
         },
         "ACReactComponentGenerator.indexFile.create": {
@@ -123,38 +119,14 @@
     },
     "commands": [
       {
-        "command": "extension.genReactContainerComponentFiles",
-        "title": "New React Container Component"
-      },
-      {
         "command": "extension.genReactStatelessComponentFiles",
-        "title": "New React Stateless Component"
-      },
-      {
-        "command": "extension.genReactReduxContainerComponentFiles",
-        "title": "New React Container Component with Redux"
-      },
-      {
-        "command": "extension.genReactReduxStatelessComponentFiles",
-        "title": "New React Stateless Component with Redux"
+        "title": "New React Component"
       }
     ],
     "menus": {
       "explorer/context": [
         {
-          "command": "extension.genReactContainerComponentFiles",
-          "group": "navigation"
-        },
-        {
           "command": "extension.genReactStatelessComponentFiles",
-          "group": "navigation"
-        },
-        {
-          "command": "extension.genReactReduxContainerComponentFiles",
-          "group": "navigation"
-        },
-        {
-          "command": "extension.genReactReduxStatelessComponentFiles",
           "group": "navigation"
         }
       ]
@@ -172,7 +144,6 @@
     "eslint": "^4.11.0",
     "@types/node": "^8.10.25",
     "@types/mocha": "^2.2.42"
-
   },
   "dependencies": {
     "change-case": "^3.0.2",
